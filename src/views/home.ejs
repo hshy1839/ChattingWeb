@@ -6,37 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="../public/css/styles.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <h1>나야나</h1>
+        <h2 id="clock">00:00:00</h2>
+        <h1>Anonymous Chat</h1>
+        <div id="weather-container">
+            <div id="weather">
+                <span></span><br>
+                <span></span>
+            </div>
+            <div id="temperature">
+                <span></span><br>
+                <span></span>
+            </div>
+        </div>
     </header>
     <main>
         <div id="welcome">
             <form class="room_form">
                 <input id="room_name" placeholder="room name" , required, type="text">
                 <button>Enter Room</button>
-                <h4>Open Rooms: </h4>
-                <ul></ul>
+                <h4>Open Rooms:</h4>
             </form>
         </div>
         <div id="inRoom">
             <h3></h3>
-            <ul>
-                <form class="nickname">
-                    <input id="nickname" placeholder="nickname" , required, type="text">
-                    <button>Save</button>
+            <form class="nickname">
+                <input id="nickname" placeholder="nickname" , required, type="text">
+                <button>Save</button>
             </form>
+            <div class="conversation-container">
+                <ul id="messageContainer"></ul>
+            </div>
                 <form class="msg">
                     <input id="message" placeholder="message" , required, type="text">
                     <button>Send</button>
-            </form>
-            </ul>
+                </form>
+            
         </div>
     </main>
     <script src="../public/js/app.js"></script>
+    <script src="/public/js/clock.js"></script>
+    <script src="/public/js/weather.js"></script>
 </body>
 
 </html>

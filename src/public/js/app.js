@@ -11,16 +11,26 @@ let roomName;
 function addMessage(message) {
     const ul = inRoom.querySelector("ul");
     const li = document.createElement("li");
+    const messageSpan = document.createElement("span");
+    messageSpan.innerText = message;
+    li.appendChild(messageSpan);
+
+    if (message.includes('나 :')) {
+        li.classList.add('your-message');
+    } else {
+        li.classList.add('other-message');
+    }
     li.innerText = message;
     ul.appendChild(li);
 }
+
 
 function handleMessageSubmit() {
     event.preventDefault();
     const input = inRoom.querySelector(".msg input");
     const value = input.value;
     socket.emit("new_message", input.value, roomName, ()=> {
-        addMessage(`YOU : ${value}`);
+        addMessage(`나 : ${value}`);
     });
     input.value="";
 }

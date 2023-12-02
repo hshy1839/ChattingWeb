@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4267B2; /* Facebook Blue */
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#weather-container {
+    display: flex;
+    align-items: center;
+}
+
+#clock {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.room_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.room_form input,
+.nickname input,
+.msg input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.room_form button,
+.nickname button,
+.msg button {
+    padding: 10px;
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#inRoom {
+    text-align: center;
+}
+
+.conversation-container {
+    max-height: 400px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse; /* 역순으로 배치 */
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.msg {
+    display: flex;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.msg input {
+    flex: 1;
+    margin-right: 10px;
+    border-radius: 5px 0 0 5px; /* 왼쪽만 둥글게 */
+}
+
+.msg button {
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0; /* 오른쪽만 둥글게 */
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    height: 14%;
+    width: max-content;
+}
+
+.your-message {
+    background-color: #0084ff;
+    color: white; 
+    text-align: right;
+}
+
+.other-message {
+    background-color: #f1f0f0;
+    color: #333;
+    text-align: left;
+}
+
+.nickname {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
