@@ -7,9 +7,8 @@ const { instrument } = require('@socket.io/admin-ui');
 const port = 8864;
 
 app.set('view engine', 'ejs');
-app.set("views", __dirname + "/views");
-app.use("/public", express.static(__dirname + "/public"));
-app.get("/", (req, res) => res.render("home"));
+app.set("views", __dirname);
+app.get("/", (req, res) => res.render("index"));
 
 const httpServer = http.createServer(app);
 const wsServer = new Server(httpServer, {
