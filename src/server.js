@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-const SocketIO = require('socket.io');
+const { Server } = require('socket.io');
+const { instrument } = require('@socket.io/admin-ui');
 
 const port = 8864;
 
@@ -11,7 +12,15 @@ app.use("/public", express.static(__dirname + "/public"));
 app.get("/", (req, res) => res.render("home"));
 
 const httpServer = http.createServer(app);
-const wsServer = SocketIO(httpServer);
+const wsServer = new Server(httpServer, {
+    cors: {
+      origin: ['https://admin.socket.io'],
+      Credentials: true,
+    },
+  })
+  instrument(wsServer, {
+    auth: false,
+  });
 
 function publicRooms() {
     const {
