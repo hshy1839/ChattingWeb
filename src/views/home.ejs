@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>나야나</h1>
+    </header>
+    <main>
+        <div id="welcome">
+            <form class="room_form">
+                <input id="room_name" placeholder="room name" , required, type="text">
+                <button>Enter Room</button>
+            </form>
+        </div>
+        <div id="inRoom">
+            <h3></h3>
+            <ul>
+                <form class="nickname">
+                    <input id="nickname" placeholder="nickname" , required, type="text">
+                    <button>Save</button>
+            </form>
+                <form class="msg">
+                    <input id="message" placeholder="message" , required, type="text">
+                    <button>Send</button>
+            </form>
+            </ul>
+        </div>
+    </main>
+    <script src="../public/js/app.js"></script>
+</body>
+
+</html>
