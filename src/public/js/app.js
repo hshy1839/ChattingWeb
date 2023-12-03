@@ -39,7 +39,7 @@ function showRoom() {
     welcome.hidden = true;
     inRoom.hidden = false;
     const h3 = inRoom.querySelector("h3");
-    h3.innerText = `Room ${roomName}`;
+    h3.innerText = `방: ${roomName}`;
     const msgForm = inRoom.querySelector(".msg");
     const nameForm = inRoom.querySelector(".nickname");
     msgForm.addEventListener("submit", handleMessageSubmit);   

@@ -4,54 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
     <script src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="../public/css/styles.css">
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <h2 id="clock">00:00:00</h2>
-        <h1>채팅하셈ㅋ</h1>
-        <div id="weather-container">
-            <div id="weather">
-                <span></span><br>
-                <span></span>
-            </div>
-            <div id="temperature">
-                <span></span><br>
-                <span></span>
-            </div>
+    <div class="header-navbar">
+        <div class="logo">
+            <a href="#"><img src="../public/img/H로고.png" alt="Logo" width="50px" height="50px"></a>
         </div>
-    </header>
+        <h1>Hong's Chat</h1>
+        <div class="nav-links">
+            <a href="#"><img src="../public/img/ic_home.png" width="40px" height="40px"></a>
+            <a href="#"><img src="../public/img/ic_chat_black.png" width="40px" height="40px"></a>
+            <a href="#"><img src="../public/img/ic_account.png" width="40px" height="40px"></a>
+        </div>
+    </div>
     <main>
+        <div id="weather-container">
+            <h2 id="clock">00:00:00</h2>
+        </div>
         <div id="welcome">
             <form class="room_form">
-                <input id="room_name" placeholder="방 제목 ㄱㄱ" , required, type="text">
-                <button>방 만들기ㄱㄱ</button>
+                <input id="room_name" placeholder="참여하려는 방 제목을 입력하세요" , required, type="text"><br>
+                <button>참여하기</button>
                 <h4>열린 방:</h4>
             </form>
         </div>
         <div id="inRoom">
-            <h3></h3>
-            <form class="nickname">
-                <input id="nickname" placeholder="닉넴 ㄱㄱ" , required, type="text">
-                <button>저장 ㄱㄱ</button>
-            </form>
-            <div class="conversation-container">
-                <ul id="messageContainer"></ul>
+            <div id="inRoom-obj-1">
+                <h3></h3>
             </div>
-                <form class="msg">
-                    <input id="message" placeholder="message" , required, type="text">
-                    <button>보내기ㄱㄱ</button>
+            <div id="inRoom-obj-2">
+                <form class="nickname">
+                    <input id="nickname" placeholder="닉네임을 적어주세요" , required, type="text">
+                    <button>닉네임 저장</button>
                 </form>
-            
-        </div>
+                <div class="conversation-container">
+                    <ul id="messageContainer"></ul>
+                </div>
+                    <form class="msg">
+                        <input id="message" placeholder="message" , required, type="text">
+                        <button>전송</button>
+                    </form>
+                </div>
+            </div>
+            <div id="weather">
+                <span></span><br>
+                <span></span>
+            </div>
     </main>
     <script src="../public/js/app.js"></script>
-    <script src="/public/js/clock.js"></script>
-    <script src="/public/js/weather.js"></script>
+    <script src="../public/js/clock.js"></script>
+    <script src="../public/js/weather.js"></script>
 </body>
 
 </html>

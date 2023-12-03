@@ -5,22 +5,52 @@ body {
     background-color: #f0f0f0;
 }
 
-header {
-    background-color: #4267B2; /* Facebook Blue */
-    color: white;
+.header-navbar {
+    background-color: white;
     padding: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#weather-container {
+.header-navbar .logo {
+    margin-left: 1%;
+}
+
+.header-navbar h1 {
+    color: black;
+    text-align: center;
+    user-select: none;
+    font-size: x-large;
+    font-weight: 1000;
+    margin-left: 12%;
+}
+
+.nav-links {
+    margin-right: 10%;
     display: flex;
+}
+
+.nav-links>* {
+    margin-right: 45%;
+}
+
+#weather-container {
     align-items: center;
 }
 
+#weather {
+    font-size: 200%;
+    margin-top: 5%;
+    font-weight: bold;
+    color: #333;
+}
+
 #clock {
-    margin: 0;
+    margin-top: 20%;
+    font-size: 400%;
+    user-select: none;
 }
 
 main {
@@ -30,16 +60,38 @@ main {
     padding: 20px;
 }
 
-.room_form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#welcome,
+.inRoom-obj-1,
+.inRoom-obj-2 {
     margin-bottom: 20px;
+    margin-top: 5%;
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 40%;
+    height: 50%;
 }
 
-.room_form input,
+.room_form {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    margin-top: 5%;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.room_form input {
+    padding: 10px;
+    width: 70%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
 .nickname input,
 .msg input {
+    align-items: center;
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ddd;
@@ -51,7 +103,7 @@ main {
 .nickname button,
 .msg button {
     padding: 10px;
-    background-color: #0084ff;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
@@ -59,73 +111,106 @@ main {
     margin-top: 5px;
 }
 
-#inRoom {
-    text-align: center;
+.room_form button:hover,
+.nickname button:hover,
+.msg button:hover {
+    background: rgb(48, 48, 48);
+}
+
+.room_form button:active,
+.nickname button:active,
+.msg button:active {
+    background: black;
 }
 
 .conversation-container {
+    width: 400px;
+    height: 400px;
     max-height: 400px;
     overflow-y: auto;
-    width: 100%;
     padding: 10px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column-reverse; /* 역순으로 배치 */
+    flex-direction: column-reverse;
+    /* 역순으로 배치 */
     background-color: white;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius:   5px 5px 0px 0px;
+    position: relative;
 }
 
 .msg {
     display: flex;
-    width: 100%;
-    position: sticky;
+    border-radius: 0px 0px 5px 5px;
+    align-items: center;
     bottom: 0;
     background-color: white;
-    z-index: 1;
+    position: relative;
+}
+
+.msg-div {
+    background-color: white;
 }
 
 .msg input {
+    margin-left: 5%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    height: 30px;
     flex: 1;
-    margin-right: 10px;
-    border-radius: 5px 0 0 5px; /* 왼쪽만 둥글게 */
+    margin-bottom: 5%;
+    margin-right: 5%;
 }
 
 .msg button {
-    background-color: #0084ff;
     color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border: none;
-    border-radius: 0 5px 5px 0; /* 오른쪽만 둥글게 */
+    border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-80%);
+    height: 40px;
+    margin-right: 7%;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 li {
     margin: 8px 0;
-    padding: 10px;
+    padding: 8px;
     border-radius: 10px;
     height: 14%;
     width: max-content;
 }
 
 .your-message {
-    background-color: #0084ff;
-    color: white; 
+    background-color: rgb(3, 133, 255);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
     text-align: right;
 }
 
 .other-message {
-    background-color: #f1f0f0;
-    color: #333;
+    background-color: #333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
     text-align: left;
 }
 
 .nickname {
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    margin-top: 5%;
+    border-radius: 5px;
+    flex-direction: column;
 }
