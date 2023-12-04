@@ -42,7 +42,7 @@ function countRoom(roomName) {
 }
 
 wsServer.on("connection", (socket) => {
-    socket["nickname"] = "Anon";
+    socket["nickname"] = "누군가";
     socket.onAny((event)=>{
         console.log(wsServer.sockets.adapter); //API 연결을 위한 Adapter
         console.log(`Socket Event:${event}`);

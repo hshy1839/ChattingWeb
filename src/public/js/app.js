@@ -65,13 +65,13 @@ roomForm.addEventListener("submit", handleRoomSubmit);
 socket.on("welcome", (user, newCount) => {
     const h3 = inRoom.querySelector("h3");
     h3.innerText = `Room ${roomName} (${newCount})`;
-    addMessage(`${user} joined`);
+    addMessage(`-----${user} 참여했습니다.-----`);
 });
 
 socket.on("bye", (left, newCount) => {
     const h3 = inRoom.querySelector("h3");
     h3.innerText = `Room ${roomName} (${newCount})`;
-    addMessage(`${left} left`);
+    addMessage(`-----${left} 나갔습니다.-----`);
 });
 
 socket.on("new_message", addMessage);
