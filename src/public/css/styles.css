@@ -25,6 +25,7 @@ body {
     font-size: x-large;
     font-weight: 1000;
     margin-left: 12%;
+    display: inline;
 }
 
 .nav-links {
@@ -33,7 +34,7 @@ body {
 }
 
 .nav-links>* {
-    margin-right: 45%;
+    margin-right: 50%;
 }
 
 #weather-container {
@@ -215,3 +216,78 @@ li {
     border-radius: 5px;
     flex-direction: column;
 }
+
+#burger-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#burger-icon.clicked div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#burger-icon.clicked div:nth-child(2) {
+    opacity: 0;
+}
+
+#burger-icon.clicked div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#burger-icon {
+    
+    cursor: pointer;
+    padding: 20px;
+    display: none; /* 초기에는 표시하지 않음 */
+}
+
+/* 미디어 쿼리를 사용하여 화면 크기에 따라 스타일 조정 */
+@media only screen and (max-width: 768px) {
+    .header-navbar h1 {
+        display: none; /* 화면 크기가 768px 이하일 때 Hong's Chat을 숨김 */
+    }
+    .nav-links a {
+        margin-right: 30%;
+        display:none;
+    }
+
+    #burger-icon {
+        display: block; /* 화면 크기가 768px 이하일 때 햄버거 버튼을 표시 */
+    }
+    #menu-container {
+        width: 100%;
+        padding-top: 0;
+    }
+}
+#menu-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #f0f0f0;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding-top: 60px;
+    z-index: 1;
+}
+
+#menu-container a {
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+}
+#menu-container.show-menu {
+    transform: translateX(0);
+}
+
+#menu-container a:hover {
+    background-color: #ddd;
+}
+

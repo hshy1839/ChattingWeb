@@ -71,7 +71,7 @@ socket.on("welcome", (user, newCount) => {
 socket.on("bye", (left, newCount) => {
     const h3 = inRoom.querySelector("h3");
     h3.innerText = `Room ${roomName} (${newCount})`;
-    addMessage(`-----${left} 나갔습니다.-----`);
+    addMessage(`-----${left}님이 나갔습니다.-----`);
 });
 
 socket.on("new_message", addMessage);

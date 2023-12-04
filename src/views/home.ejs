@@ -20,8 +20,29 @@
             <a href="#"><img src="../public/img/ic_home.png" width="40px" height="40px"></a>
             <a href="#"><img src="../public/img/ic_chat_black.png" width="40px" height="40px"></a>
             <a href="#"><img src="../public/img/ic_account.png" width="40px" height="40px"></a>
+            <div id="burger-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="menu-container">
+                <a href="#">Home</a>
+                <a href="#">profile</a>
+                <a href="#">chatting</a>
+            </div>
         </div>
     </div>
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const burgerIcon = document.getElementById('burger-icon');
+    const menuContainer = document.getElementById('menu-container');
+
+    burgerIcon.addEventListener('click', function () {
+        menuContainer.classList.toggle('show-menu');
+        burgerIcon.classList.toggle('clicked');
+    });
+});
+    </script>
     <main>
         <div id="weather-container">
             <h2 id="clock">00:00:00</h2>
@@ -31,6 +52,7 @@
                 <input id="room_name" placeholder="참여하려는 방 제목을 입력하세요" , required, type="text"><br>
                 <button>참여하기</button>
                 <h4>열린 방:</h4>
+                <ul></ul>
             </form>
         </div>
         <div id="inRoom">
@@ -45,16 +67,16 @@
                 <div class="conversation-container">
                     <ul id="messageContainer"></ul>
                 </div>
-                    <form class="msg">
-                        <input id="message" placeholder="message" , required, type="text">
-                        <button>전송</button>
-                    </form>
-                </div>
+                <form class="msg">
+                    <input id="message" placeholder="message" , required, type="text">
+                    <button>전송</button>
+                </form>
             </div>
-            <div id="weather">
-                <span></span><br>
-                <span></span>
-            </div>
+        </div>
+        <div id="weather">
+            <span></span><br>
+            <span></span>
+        </div>
     </main>
     <script src="../public/js/app.js"></script>
     <script src="../public/js/clock.js"></script>
